@@ -34,6 +34,7 @@ SOONG_CONFIG_xdroidGlobalVars += \
     disable_postrender_cleanup \
     has_legacy_camera_hal1 \
     ignores_ftp_pptp_conntrack_failure \
+    needs_camera_boottime \
     needs_netd_direct_connect_rule \
     target_init_vendor_lib \
     target_ld_shim_libs \
@@ -67,6 +68,7 @@ SOONG_CONFIG_xdroidGlobalVars_camera_needs_client_info := $(TARGET_CAMERA_NEEDS_
 SOONG_CONFIG_xdroidGlobalVars_disable_postrender_cleanup := $(TARGET_DISABLE_POSTRENDER_CLEANUP)
 SOONG_CONFIG_xdroidGlobalVars_has_legacy_camera_hal1 := $(TARGET_HAS_LEGACY_CAMERA_HAL1)
 SOONG_CONFIG_xdroidGlobalVars_ignores_ftp_pptp_conntrack_failure := $(TARGET_IGNORES_FTP_PPTP_CONNTRACK_FAILURE)
+SOONG_CONFIG_xdroidGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
 SOONG_CONFIG_xdroidGlobalVars_needs_netd_direct_connect_rule := $(TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE)
 SOONG_CONFIG_xdroidNvidiaVars_uses_nv_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)
 SOONG_CONFIG_xdroidQcomVars_legacy_hw_disk_encryption := $(TARGET_LEGACY_HW_DISK_ENCRYPTION)
