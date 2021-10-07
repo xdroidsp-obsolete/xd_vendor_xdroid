@@ -39,5 +39,4 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
    ro.xdroid.build.version=$(XDROID_BUILD_VERSION) \
    ro.xdroid.build.number=$(XDROID_BUILD_NUMBER) \
    ro.xdroid.build.type=$(XDROID_BUILD_TYPE) \
-   ro.build.datetime=$(XDROID_BUILD_DATE_TIME) \
-   ro.caf.revision.tag=$(CAF_REVISION_TAG)
+   ro.build.datetime=$(XDROID_BUILD_DATE_TIME)
