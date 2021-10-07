@@ -1,10 +1,7 @@
 #
 # Copyright (C) The ConquerOS Project
+# Copyright (C) a xdroid, xyzprjkt
 #
-
-# OTA
-PRODUCT_PACKAGES += \
-    Updater
 
 # Telephony packages
 PRODUCT_PACKAGES += \
@@ -19,14 +16,6 @@ PRODUCT_PACKAGES += \
     su
 endif
 endif
-
-# SoftAP
-PRODUCT_PACKAGES += \
-    SoftAPManager
-
-# SystemUI plugins
-PRODUCT_PACKAGES += \
-    QuickAccessWallet
 
 # World APN list
 PRODUCT_PACKAGES += \

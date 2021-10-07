@@ -32,10 +32,6 @@ PRODUCT_COPY_FILES += \
 # xd. xdroidUI
 include vendor/xdroidui/config.mk
 
-# xd. gapps
-include vendor/google/gms/config.mk
-include vendor/google/pixel/config.mk
-
 # ART
 # Optimize everything for preopt
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
@@ -114,32 +110,9 @@ DISABLE_EAP_PROXY := true
 PRODUCT_PACKAGES += tcmiface
 PRODUCT_BOOT_JARS += tcmiface
 
-ifneq ($(HOST_OS),linux)
-ifneq ($(sdclang_already_warned),true)
-$(warning **********************************************)
-$(warning * SDCLANG is not supported on non-linux hosts.)
-$(warning **********************************************)
-sdclang_already_warned := true
-endif
-else
-
-# Face Unlock
-TARGET_FACE_UNLOCK_SUPPORTED := false
-ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
-PRODUCT_PACKAGES += \
-    FaceUnlockService
-TARGET_FACE_UNLOCK_SUPPORTED := true
-endif
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
-
 # init.rc
 $(foreach f,$(wildcard vendor/xdroid/prebuilt/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
-
-# include definitions for SDCLANG
-include vendor/xdroid/sdclang/sdclang.mk
-endif
 
 # Include AOSP audio files
 include vendor/xdroid/config/aosp_audio.mk
