@@ -32,6 +32,12 @@ PRODUCT_COPY_FILES += \
 # xd. xdroidUI
 include vendor/xdroidui/config.mk
 
+# xd. GMS
+ifeq ($(XDROID_GMS), true)
+$(warning "xdroid: Google GMS was included")
+include vendor/google/gms/gms.mk
+endif
+
 # ART
 # Optimize everything for preopt
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
