@@ -23,6 +23,9 @@ include vendor/xdroid/config/xd_packages.mk
 # xd. props
 include vendor/xdroid/config/xd_props.mk
 
+# xd. xdroidUI
+include vendor/xdroidui/config.mk
+
 # Some permissions
 PRODUCT_COPY_FILES += \
     vendor/xdroid/config/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lineagehw.xml
