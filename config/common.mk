@@ -34,10 +34,11 @@ PRODUCT_COPY_FILES += \
 include vendor/xdroidui/config.mk
 
 # xd. GMS
-ifeq ($(XDROID_GMS), true)
-$(warning "xdroid: Google GMS was included")
-include vendor/google/gms/gms.mk
-endif
+$(call inherit-product, vendor/gapps/config.mk)
+TARGET_SUPPORTS_GOOGLE_RECORDER ?= true
+TARGET_INCLUDE_STOCK_ARCORE ?= true
+TARGET_INCLUDE_LIVE_WALLPAPERS ?= true
+TARGET_SUPPORTS_QUICK_TAP ?= false
 
 # ART
 # Optimize everything for preopt

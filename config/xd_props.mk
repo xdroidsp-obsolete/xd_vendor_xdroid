@@ -3,22 +3,6 @@
 #				2021 a xdroid Prjkt
 #
 
-ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.com.google.clientidbase=android-google
-else
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
-endif
-
-ifeq ($(TARGET_BUILD_VARIANT),eng)
-# Disable ADB authentication
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=0
-else
-# Enable ADB authentication
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
-endif
-
 # A/B backuptool
 ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -44,4 +28,4 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Disable RescueParty
 PRODUCT_PRODUCT_PROPERTIES += \
-        persist.sys.disable_rescue=true
+    persist.sys.disable_rescue=true

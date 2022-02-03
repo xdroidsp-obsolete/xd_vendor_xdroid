@@ -7,6 +7,13 @@
 PRODUCT_PACKAGES += \
     Stk
 
+# Filesystems tools
+PRODUCT_PACKAGES += \
+    fsck.ntfs \
+    mke2fs \
+    mkfs.ntfs \
+    mount.ntfs
+
 # Root
 PRODUCT_PACKAGES += \
     adb_root
